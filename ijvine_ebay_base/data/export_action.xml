@@ -4,60 +4,28 @@
 
 <odoo>
 	<data noupdate="1" >
-		<record
-			id           ="export_odoo_product_template_action"
-			name         ="Export/Update Templates"
-			binding_model="product.template"
-			res_model    ="export.templates"
-			view_mode    ="form"
-			target       ="new"
-		/>
+		<record id="export_odoo_product_template_action" model="ir.actions.act_window">
+			<field name="name">Export/Update Templates</field>
+			<field name="binding_model">product.template</field>
+			<field name="res_model">export.templates</field>
+			<field name="view_mode">export.templates</field>
+			<field name="target">new</field>
+		</record>
 
-		<record
-			id           ="export_odoo_products_action"
-			name         ="Export/Update Products"
-			binding_model="product.product"
-			res_model    ="export.products"
-			view_mode    ="form"
-			target       ="new"
-		/>
+		<record id="export_odoo_products_action" model="ir.actions.act_window">
+			<field name="name">Export/Update Products</field>
+			<field name="binding_model">product.product</field>
+			<field name="res_model">export.products</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
 
-		<record
-			id           ="export_odoo_products_category"
-			name         ="Export/Update Categories"
-			binding_model="product.category"
-			res_model    ="export.categories"
-			view_mode    ="form"
-			target       ="new"
-		/>
-
-<!-- Note(Pankaj Kumar): These actions are to be reconsidered to replace old ones -->
-<!--
-		<record
-			id           ="export_category"
-			name         ="Export Category"
-			binding_model="product.category"
-			res_model    ="export.operation"
-			view_mode    ="form"
-			target       ="new"
-		/>
-
-		<record
-			id           ="export_template"
-			name         ="Export Template"
-			binding_model="product.template"
-			res_model    ="export.operation"
-			view_mode    ="form"
-			target       ="new"
-		/>
-
-		<record
-			id           ="export_product"
-			name         ="Export Product"
-			binding_model="product.product"
-			res_model    ="export.operation"
-			view_mode    ="form"
-			target       ="new"
-		/> -->
+		<record id="export_odoo_products_category" model="ir.actions.act_window">
+			<field name="name">Export/Update Categories</field>
+			<field name="binding_model">product.category</field>
+			<field name="res_model">export.categories</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
 	</data>
 </odoo>
