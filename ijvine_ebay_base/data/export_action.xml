@@ -8,7 +8,7 @@
 			<field name="name">Export/Update Templates</field>
 			<field name="binding_model_id" ref="model_product_template"/>
 			<field name="res_model">export.templates</field>
-			<field name="view_mode">export.templates</field>
+			<field name="view_mode">form</field>
 			<field name="target">new</field>
 		</record>
 
