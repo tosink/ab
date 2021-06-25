@@ -4,7 +4,7 @@
 
 <odoo>
 	<data noupdate="1" >
-		<act_window
+		<record
 			id           ="export_odoo_product_template_action"
 			name         ="Export/Update Templates"
 			binding_model="product.template"
@@ -13,7 +13,7 @@
 			target       ="new"
 		/>
 
-		<act_window
+		<record
 			id           ="export_odoo_products_action"
 			name         ="Export/Update Products"
 			binding_model="product.product"
@@ -22,7 +22,7 @@
 			target       ="new"
 		/>
 
-		<act_window
+		<record
 			id           ="export_odoo_products_category"
 			name         ="Export/Update Categories"
 			binding_model="product.category"
@@ -33,7 +33,7 @@
 
 <!-- Note(Pankaj Kumar): These actions are to be reconsidered to replace old ones -->
 <!--
-		<act_window
+		<record
 			id           ="export_category"
 			name         ="Export Category"
 			binding_model="product.category"
@@ -42,7 +42,7 @@
 			target       ="new"
 		/>
 
-		<act_window
+		<record
 			id           ="export_template"
 			name         ="Export Template"
 			binding_model="product.template"
@@ -51,7 +51,7 @@
 			target       ="new"
 		/>
 
-		<act_window
+		<record
 			id           ="export_product"
 			name         ="Export Product"
 			binding_model="product.product"

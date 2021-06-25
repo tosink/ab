@@ -28,7 +28,7 @@
 			</field>
 		</record>
 
-		<act_window
+		<record
 			id="action_feed_sync"
 			name="Evaluate Feed"
 			res_model="feed.sync.wizard"
