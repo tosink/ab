@@ -13,7 +13,7 @@
   "author"               :  "IjVine Corporation",
   "license"              :  "Other proprietary",
   "website"              :  "https://www.ijvine.com",
-  "description"          :  """Ebay IjVine""",",
+  "description"          :  """Ebay IjVine""",
   "depends"              :  ['ijvine_ebay_base'],
   "data"                 :  [
                              'data/data.xml',
