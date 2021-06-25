@@ -4,7 +4,7 @@
     <record id="inherit_form_wizard_message" model="ir.ui.view">
         <field name="name">inherit.wizard.message.form</field>
         <field name="model">wizard.message</field>
-        <field name="inherit_id" ref="ijvine_messagess.form_wizard_message" />
+        <field name="inherit_id" ref="ijvine_messages.form_wizard_message" />
         <field name="arch" type="xml">
             <xpath expr="//button" position="replace">
                     <button
