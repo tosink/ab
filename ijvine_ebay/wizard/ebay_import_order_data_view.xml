@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="import_ebay_orders_form" model="ir.ui.view">
+            <field name="name">import_ebay_orders_form.form</field>
+            <field name="model">import.ebay.orders</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Import Ebay Orders" version="7.0">
+                    <sheet>
+                        <group col="4">
+                            <field name="create_time_from"/>
+                            <field name="create_time_to"/>
+                            <field name="ebay_order_status" required="1"/>
+                            <!--<field name="ebay_sorting_order" required="1"/>-->
+                        </group>
+                        <div col="2" class="oe_grey oe_inline">
+                                <b>NOTE:</b>
+                                <span>The maximum time range allowed in a request is 90 days.</span>
+                            </div>
+                        <group col="2">
+                         
+                            <field name="ebay_order_id"/>
+                        </group>
+                    </sheet>
+                    <separator colspan="6"/>
+                    <footer>
+                        <button name="import_now" string="Import Now" type="object" class="oe_highlight" />
+                        <span>or</span>
+                        <button special="cancel" string="Cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="action_id_import_ebay_orders" model="ir.actions.act_window">
+            <field name="name">Import Ebay Orders</field>
+            <field name="res_model">import.ebay.orders</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</openerp>

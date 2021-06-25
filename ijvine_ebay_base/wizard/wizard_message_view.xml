@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright (c) 2021-Present IjVine Corporation (<https://ijvine.com/>) -->
+<odoo>
+    <record id="inherit_form_wizard_message" model="ir.ui.view">
+        <field name="name">inherit.wizard.message.form</field>
+        <field name="model">wizard.message</field>
+        <field name="inherit_id" ref="ijvine_wizard_messages.form_wizard_message" />
+        <field name="arch" type="xml">
+            <xpath expr="//button" position="replace">
+                    <button
+                        string=" Back"
+                        type  ="object"
+                        name  ="operation_back"
+                        class ="oe_highlight btn btn-dark fa fa-arrow-left"
+                    />
+                    <button string="Cancel" class="btn btn-danger" name="cancel" special="cancel"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

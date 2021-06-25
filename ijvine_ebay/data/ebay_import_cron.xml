@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        
+        <record forcecreate="True" id="ir_cron_import_eaby_orders" model="ir.cron">
+            <field name="name">Import Orders Cron Template</field>
+            <field name="active" eval="False" />
+            <field name="user_id" ref="base.user_root" />
+            <field name="priority">6</field>
+            <field name="interval_number">60</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="model_id" ref="model_import_ebay_orders" />
+            <field name="state">code</field>
+            <field name="code">model.import_orders_by_cron()</field>
+        </record>
+
+          <record forcecreate="True" id="ir_cron_import_eaby_products" model="ir.cron">
+            <field name="name">Import Products Cron Template</field>
+            <field name="active" eval="False" />
+            <field name="user_id" ref="base.user_root" />
+            <field name="priority">6</field>
+            <field name="interval_number">60</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="model_id" ref="model_import_ebay_products" />
+            <field name="state">code</field>
+            <field name="code">model.import_products_by_cron()</field>
+        </record>
+
+   
+    </data>
+</openerp>

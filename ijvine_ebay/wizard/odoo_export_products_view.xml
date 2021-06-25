@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="inherited_export_odoo_products_form" model="ir.ui.view">
+            <field name="name">export.products.form</field>
+            <field name="model">export.products</field>
+            <field name="inherit_id" ref="odoo_multi_channel_sale.export_odoo_products_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//footer/button[@name='cancel']" position="before">
+                    <button name="export_ebay_products" class="oe_highlight" string="Export" type="object" attrs="{'invisible':['|',('channel','!=', 'ebay'),('operation','!=', 'export')]}"/>
+                    <button name="update_ebay_products" class="oe_highlight" string="Update" type="object" attrs="{'invisible':['|',('channel','!=', 'ebay'),('operation','!=', 'update')]}"/>
+                    <button name="delete_products_on_ebay" class="oe_highlight" string="Delete" type="object" attrs="{'invisible':['|',('channel','!=', 'ebay'),('operation','!=', 'delete')]}"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="_inherited_export_odoo_templates_form" model="ir.ui.view">
+            <field name="name">export.templates.form</field>
+            <field name="model">export.templates</field>
+            <field name="inherit_id" ref="odoo_multi_channel_sale.export_odoo_templates_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='channel']" position="after">
+                    <group string="Specify the reason for deleting the listing on ebay" attrs="{'invisible':['|',('channel','!=', 'ebay'),('operation','!=', 'delete')]}">
+                        <field name="ebay_end_reason" attrs="{'required':['|',('channel','=', 'ebay'),('operation','=', 'delete')]}"/>
+                    </group>
+                </xpath>
+                <xpath expr="//footer/button[@name='cancel']" position="before">
+                    <button name="export_ebay_templates" class="oe_highlight" string="Export" type="object" attrs="{'invisible':['|',('channel','!=', 'ebay'),('operation','!=', 'export')]}"/>
+                    <button name="update_ebay_templates" class="oe_highlight" string="Update" type="object" attrs="{'invisible':['|',('channel','!=', 'ebay'),('operation','!=', 'update')]}"/>
+                    <button name="delete_products_on_ebay" class="oe_highlight" string="Delete" type="object" attrs="{'invisible':['|',('channel','!=', 'ebay'),('operation','!=', 'delete')]}" help="Listing(product) will be deleted on ebay and also the mapping on Odoo will be deleted."/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

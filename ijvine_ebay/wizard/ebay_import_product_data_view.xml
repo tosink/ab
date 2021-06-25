@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="import_ebay_products_form" model="ir.ui.view">
+            <field name="name">import_ebay_products_form.form</field>
+            <field name="model">import.ebay.products</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Import Ebay Products" version="7.0">
+                    <sheet>
+                        <!--<separator string="Filter by Category"/>-->
+                        <group>
+                            <field name="import_using" widget="radio" options="{'horizontal':True}"/>
+                        </group>
+                        <group name="importprod1" attrs="{'invisible':[('import_using','!=','date')]}">
+                            <field name="store_category_id" widget="selection"/>
+                            <field name="detaillevel" invisible="1"/>
+                        </group>
+                        <group name="importprod2" col="4" attrs="{'invisible':[('import_using','!=','date')]}">
+                            <field name="start_time_from" attrs="{'required':[('import_using','=','date')]}"/>
+                            <field name="start_time_to" attrs="{'required':[('import_using','=','date')]}"/>
+                            <p class="oe_grey">
+                                <b>NOTE:</b>
+                                <span>The maximum time range allowed in a request is 120 days.</span>
+                            </p>
+                        </group>
+                        <group attrs="{'invisible':[('import_using','!=','prod_id')]}">
+                         <field name="store_product_id" attrs="{'required':[('import_using','=','prod_id')]}"/>
+                        </group>
+                    </sheet>
+                    <separator colspan="6"/>
+                    <footer>
+                        <button name="import_now" string="Import Now" type="object" class="oe_highlight" />
+                        <span> or </span>
+                        <button special="cancel" string="Cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="action_id_import_ebay_products" model="ir.actions.act_window">
+            <field name="name">Import Ebay Products</field>
+            <field name="res_model">import.ebay.products</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</openerp>

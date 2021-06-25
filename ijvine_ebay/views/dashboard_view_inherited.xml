@@ -1,0 +1,32 @@
+<odoo>
+<!-- Copyright (c) 2018-Present IjVine Corporation (<https://ijvine.com/>).-->
+
+    <data>
+        <record id="multi_channel_view_kanban" model="ir.ui.view">
+            <field name="name">multi.channel.sale.kanban</field>
+            <field name="model">multi.channel.sale</field>
+            <field name="inherit_id" ref="odoo_multi_channel_sale.multi_channel_view_kanban"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//div[contains(@class,'ijvine_o_project_kanban_main')]//div[@class='o_kanban_card_content o_visible oe_kanban_global_click']" position="inside">
+                    <div class="o_kanban_primary_left">
+                        <div class="o_primary">
+                            <center>
+                                <span>
+                                    <t t-field="record.name.value"/>
+                                </span>
+                            </center>
+                        </div>
+                        <div t-if="record.channel.value =='Ebay'">
+                            <center>
+                                <img src="/ijvine_ebay/static/description/ebay.png"/>
+                                <h3>
+                                    <t t-esc="record.name.value"/>
+                                </h3>
+                            </center>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

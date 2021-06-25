@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2018-Present IjVine Corporation (<https://ijvine.com/>).-->
+
+<odoo>
+    <data>
+        <record id="inherited_category_form_view" model="ir.ui.view">
+             <field name="name">channel.category.mappings.form</field>
+            <field name="model">channel.category.mappings</field>
+            <field name="inherit_id" ref="odoo_multi_channel_sale.channel_category_mapping_form"/>
+            <field name="arch" type="xml">
+               <xpath expr="//sheet" position="inside">
+               <div>
+                 <label for="ebay_category_specifics" string="Name Value Specifics for this category"/>
+                  <field name="ebay_category_specifics" nolabel="1"/>
+                   <p> On clicking the link below the Item specifis for this category will be displayed.<br/>
+                      The ItemSpecifics are required while exporting the products from Odoo to ebay and these are category specific.<br/>
+                      The ItemSpecifics with default values will be added in the above field and you can change the values in the list on your choice.<br/>
+                      These ItemSpecifics will be used while exporting the product from Odoo to eBay.
+                  </p>
+                <separator string='Select value from the given list of values' />
+                <field name="ebay_category_specifics_values" nolabel="1" widget="html"/>
+
+               </div>
+               <group col="4">
+                    <field name='ebay_max_names'/>
+                    <field name='ebay_max_values_per_name'/>
+                </group>
+               <group attrs="{'invisible':[('ecom_store', '!=','ebay')]}">
+                    <span>Click on the link to see the ebay specifics of this category<button name="getCategorySpecifics" string="Click here" type="object" class="oe_highlight oe_link" /></span>
+               </group>
+               </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
