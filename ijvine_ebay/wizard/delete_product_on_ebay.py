@@ -76,7 +76,7 @@ class ExportTemplates(models.TransientModel):
 			'name': _("Summary"),
 			'view_mode': 'form',
 			'view_id': False,
-			'view_type': 'form',
+			'view_mode': 'form',
 			'res_model': 'wizard.message',
 			'res_id': wizard_id.id,
 			'type': 'ir.actions.act_window',

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2021-Present IjVine Corporation (<https://ijvine.com/>) -->
+
+
+<odoo>
+	<template id="assets_backend" inherit_id="web.assets_backend">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/css" href="/ijvine_ebay_base/static/src/css/dashboard.css"/>
+		</xpath>
+		<xpath expr="//script[last()]" position="after">
+			<script type="text/javascript" src="/ijvine_ebay_base/static/src/js/dashboard.js"/>
+			<script type="text/javascript" src="/ijvine_ebay_base/static/src/js/ijvine_ebay_base.js"/>
+		</xpath>
+	</template>
+</odoo>
