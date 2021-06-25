@@ -3,7 +3,7 @@
 
 
 <odoo>
-	<data>
+	
 		<record id="form_feed_sync" model="ir.ui.view">
 			<field name="name">Evaluate Feed</field>
 			<field name="model">feed.sync.wizard</field>
@@ -35,5 +35,5 @@
 			view_mode="form"
 			target="new"
 		/>
-	</data>
+	
 </odoo>
