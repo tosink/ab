@@ -18,10 +18,10 @@
   "data"                 :  [
                              'data/data.xml',
                              'views/business_policies_skeletion_view.xml',
-                             'views/eob_config.xml',
                              'wizard/ebay_import_category_data_view.xml',
                              'wizard/ebay_import_product_data_view.xml',
                              'wizard/ebay_import_order_data_view.xml',
+                             'views/eob_config.xml',
                              'views/inherited_search_views.xml',
                              'views/inherits_view.xml',
                              'data/ebay_import_cron.xml',
