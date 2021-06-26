@@ -54,7 +54,7 @@
         <record id="inherited_form_multi_channel_sale" model="ir.ui.view">
             <field name="name">multi.channel.sale.inherited</field>
             <field name="model">multi.channel.sale</field>
-            <field name="inherit_id" ref="odoo_multi_channel_sale.multi_channel_view_form" />
+            <field name="inherit_id" ref="ijvine_ebay_base.multi_channel_view_form" />
             <field name="arch" type="xml">
                 <xpath expr="//group[@name='import_buttons']" position="inside">
                     <group col="1" attrs= "{'invisible':[('channel','!=', 'ebay')]}" class="text-center">
@@ -212,7 +212,7 @@
                 </page>
             </field>
         </record>
-        <menuitem id="menu_id_ebay" name="Ebay" parent="odoo_multi_channel_sale.menu_id_multi_channel_configuration" sequence="2"/>
+        <menuitem id="menu_id_ebay" name="Ebay" parent="ijvine_ebay_base.menu_id_multi_channel_configuration" sequence="2"/>
         <menuitem id="menu_id_ebay_global_id_values" name="eBay Global Ids" parent="menu_id_ebay" action="action_id_ebay_global_id_values" sequence="2"/>
         <menuitem id="menu_id_ebay_business_policies" name="Business Policies " parent="menu_id_ebay" action="action_busines_policies_mapping" sequence="3"/>
     </data>

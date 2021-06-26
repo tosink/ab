@@ -4,7 +4,7 @@
         <record id="inherited_export_odoo_products_form" model="ir.ui.view">
             <field name="name">export.products.form</field>
             <field name="model">export.products</field>
-            <field name="inherit_id" ref="odoo_multi_channel_sale.export_odoo_products_form"/>
+            <field name="inherit_id" ref="ijvine_ebay_base.export_odoo_products_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//footer/button[@name='cancel']" position="before">
                     <button name="export_ebay_products" class="oe_highlight" string="Export" type="object" attrs="{'invisible':['|',('channel','!=', 'ebay'),('operation','!=', 'export')]}"/>
@@ -16,7 +16,7 @@
         <record id="_inherited_export_odoo_templates_form" model="ir.ui.view">
             <field name="name">export.templates.form</field>
             <field name="model">export.templates</field>
-            <field name="inherit_id" ref="odoo_multi_channel_sale.export_odoo_templates_form"/>
+            <field name="inherit_id" ref="ijvine_ebay_base.export_odoo_templates_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//group[@name='channel']" position="after">
                     <group string="Specify the reason for deleting the listing on ebay" attrs="{'invisible':['|',('channel','!=', 'ebay'),('operation','!=', 'delete')]}">

@@ -6,7 +6,7 @@
         <record id="product_feed_view_form_inherited" model="ir.ui.view">
             <field name="name">product.feed.form</field>
             <field name="model">product.feed</field>
-            <field name="inherit_id" ref="odoo_multi_channel_sale.product_feed_view_form"/>
+            <field name="inherit_id" ref="ijvine_ebay_base.product_feed_view_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//page[@name='extra']//group" position="after">
                     <group string="Ebay html Description" attrs= "{'invisible':[('channel','!=', 'ebay')]}">

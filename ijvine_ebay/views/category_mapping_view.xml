@@ -6,7 +6,7 @@
         <record id="inherited_category_form_view" model="ir.ui.view">
              <field name="name">channel.category.mappings.form</field>
             <field name="model">channel.category.mappings</field>
-            <field name="inherit_id" ref="odoo_multi_channel_sale.channel_category_mapping_form"/>
+            <field name="inherit_id" ref="ijvine_ebay_base.channel_category_mapping_form"/>
             <field name="arch" type="xml">
                <xpath expr="//sheet" position="inside">
                <div>
