@@ -68,7 +68,9 @@
                              'data/export_action.xml',
                              'data/update_mapping_action.xml',
                              'data/cron.xml',
-                             'data/data.xml'
+                             'data/data.xml',
+                             'static/src/xml/multichannel_dashboard.xml',
+                             'static/src/xml/instance_dashboard.xml'
                             ],
   "qweb"                 :  [
                              'static/src/xml/multichannel_dashboard.xml',
