@@ -8,7 +8,7 @@ from odoo import api,fields,models
 
 class MultiChannelSkeleton(models.Model):
     _name        = 'multi.channel.skeleton'
-    _description = 'Multi Channel Skeleton'
+    _description = 'Channel Skeleton'
 
     def _get_journal_code(self, string, sep=' '):
         """

@@ -8,7 +8,7 @@ from odoo import api,fields,models
 
 class MultiChannelSaleConfig(models.TransientModel):
 	_name = 'multi.channel.sale.config'
-	_description = 'Multi Channel Sale Config'
+	_description = 'Channel Sale Config'
 	_inherit = 'res.config.settings'
 
 	cron_import_partner = fields.Many2one('ir.cron','Import Customer Scheduler',readonly=True)

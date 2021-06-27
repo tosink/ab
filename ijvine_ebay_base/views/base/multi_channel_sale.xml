@@ -856,7 +856,7 @@
 		</record>
 
 		<record id="action_multi_channel_view" model="ir.actions.act_window">
-			<field name="name">Multi Channel Sale</field>
+			<field name="name">Channel Sale</field>
 			<field name="res_model">multi.channel.sale</field>
 			<field name="view_mode">kanban,tree,form</field>
 			<field name="view_id" ref="multi_channel_view_kanban"/>

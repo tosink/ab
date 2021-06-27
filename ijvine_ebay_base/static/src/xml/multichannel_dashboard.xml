@@ -27,11 +27,7 @@
 							<t t-esc="widget.connected_count"/> Connected
 						</a>
 						<p>
-							Now, connect all of your e-commerce as well as marketplace with single Odoo!
-							Managing data in different instances is hectic so
-							what’s better than opting for IjVine channel Sale.
-							It helps you to manage the data of multiple
-							E-commerces and marketplace in a single Odoo instance.
+							Now, connect all of your eCommerce as well as marketplace with single instance!
 						</p>
 						<div class="d-flex flex-column flex-md-row mt-4 mb-2">
 							<button

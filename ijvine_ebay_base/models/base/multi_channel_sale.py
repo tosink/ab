@@ -63,7 +63,7 @@ MAPPINGMODEL = {
 
 class MultiChannelSale(models.Model):
 	_name = 'multi.channel.sale'
-	_description = 'Multi Channel Sale'
+	_description = 'Channel Sale'
 	_inherit = ['mail.thread', 'mail.activity.mixin']
 
 	import_order_cron = fields.Boolean("Import Orders")
