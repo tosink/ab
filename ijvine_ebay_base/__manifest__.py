@@ -70,6 +70,10 @@
                              'data/cron.xml',
                              'data/data.xml'
                             ],
+  "qweb"                 :  [
+                             'static/src/xml/multichannel_dashboard.xml',
+                             'static/src/xml/instance_dashboard.xml',
+                            ],                            
   "application"          :  True,
   "installable"          :  True,
   "auto_install"         :  False,
