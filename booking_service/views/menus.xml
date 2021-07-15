@@ -1,0 +1,29 @@
+<odoo>
+  <data>
+
+<!--    parent menu   -->
+    <menuitem id="booking_service_menu"
+            name="Booking"
+            parent="sale.sale_menu_root"
+            sequence="1"/>
+
+    <menuitem id="booking_order_menu"
+            name="Booking Order"
+            parent="booking_service_menu"
+            sequence="1"
+            action="booking_service.booking_order_tree_action"
+    />
+    <menuitem id="work_order_menu"
+            name="Work Order"
+            parent="booking_service_menu"
+            sequence="2"
+            action=""
+    />
+    <menuitem id="team_menu"
+            name="Team"
+            parent="booking_service_menu"
+            sequence="3"
+            action="booking_service.booking_team_action"
+    />
+  </data>
+</odoo>

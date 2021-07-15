@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="booking_view_employee_form" model="ir.ui.view">
+            <field name="name">booking_view_employee_form</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button name="%(booking_service.open_employee_events)d"
+                        type="action" class="oe_stat_button" icon="fa-usd" context="{'default_employee_partner_id': context.get('id')}">
+                    </button>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

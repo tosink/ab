@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="booking_order_form_inherit" model="ir.ui.view">
+            <field name="name">booking_order_form_inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='other_information']" position="inside">
+                    <group>
+                        <group name="booking" string="Booking">
+                            <field name="is_booking"/>
+                        </group>
+                    </group>
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="booking_team_id" attrs="{'invisible': [('is_booking', '=', False)]}"/>
+                    <field name="team_leader_id" attrs="{'invisible': [('is_booking', '=', False)]}"/>
+                    <field name="team_emaployee_ids" widget="many2many" attrs="{'invisible': [('is_booking', '=', False)]}"
+                    context="{'tree_view_ref': 'booking_service.booking_team_employee_tree_view'}"/>
+                    <field name="team_equipment_ids" widget="many2many" attrs="{'invisible': [('is_booking', '=', False)]}"
+                    context="{'tree_view_ref': 'booking_service.booking_team_equipment_tree_view'}"
+                    domain="[('is_equipment', '=', True)]"/>
+                </xpath>
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+                    <field name="booking_start" attrs="{'invisible': [('is_booking', '=', False)],
+                    'required': [('is_booking', '=', True)]}"/>
+                    <field name="booking_end" attrs="{'invisible': [('is_booking', '=', False)],
+                     'required': [('is_booking', '=', True)]}"/>
+                </xpath>
+                <xpath expr="//button[@name='action_confirm']" position="after">
+                    <button name="action_check_calendar" type="object" class="oe_highlight" string="Check"
+                    attrs="{'invisible': [('is_booking', '=', False)]}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="booking_order_tree_action" model="ir.actions.act_window">
+            <field name="name">Booking Orders</field>
+            <field name="res_model">sale.order</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_id" ref="sale.view_quotation_tree"/>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('is_booking', '=', True)]</field>
+            <field name="context">{'default_is_booking': True}</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Define a new warehouse
+              </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

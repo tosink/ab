@@ -1,0 +1,61 @@
+<odoo>
+  <data>
+
+    <record id="booking_team_view_form" model="ir.ui.view">
+        <field name="name">booking_team_view_form</field>
+        <field name="model">booking.team</field>
+        <field name="arch" type="xml">
+            <form string="Team">
+                <div class="oe_title">
+                        <h1>
+                            <field name="team_name"/>
+                        </h1>
+                    </div>
+                <group>
+                    <field name="team_leader"/>
+                    <field name="employee_ids" widget="many2many"
+                    context="{'tree_view_ref': 'booking_service.booking_team_employee_tree_view'}"/>
+                    <field name="equipment_ids" widget="many2many"
+                    context="{'tree_view_ref': 'booking_service.booking_team_equipment_tree_view'}"
+                    domain="[('is_equipment', '=', True)]"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+      <record id="booking_team_employee_tree_view" model="ir.ui.view">
+            <field name="name">booking_team_employee_tree_view</field>
+            <field name="model">hr.employee</field>
+            <field name="priority">1000</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom" create="0">
+                    <field name="name" readonly="1" nolabel="1"/>
+                </tree>
+            </field>
+        </record>
+      <record id="booking_team_equipment_tree_view" model="ir.ui.view">
+            <field name="name">booking_team_equipment_tree_view</field>
+            <field name="model">product.product</field>
+            <field name="priority">1000</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom" create="0">
+                    <field name="name" readonly="1" nolabel="1"/>
+                </tree>
+            </field>
+        </record>
+
+    <record id="booking_team_action" model="ir.actions.act_window">
+        <field name="name">Team</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">booking.team</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first team!
+            </p>
+        </field>
+    </record>
+
+  </data>
+</odoo>
